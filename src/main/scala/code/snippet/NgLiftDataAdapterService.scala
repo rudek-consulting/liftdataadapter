@@ -44,6 +44,13 @@ class NgLiftDataAdapterService extends Loggable {
   }
 
   def findAll(input:JValue) : List[Todo] = {
+    for {
+      JString(sType) <- input \ "type"
+      //JString(sinceToken) <- input \ "sinceToken"
+    } {
+      logger.info("type = " + sType) // + " sinceToken = " + sinceToken)
+    }
+
     val elems = List(
       Todo(0,"Erstes Todo", false),
       Todo(1,"ZweitesTodo", true),
@@ -63,7 +70,7 @@ class NgLiftDataAdapterService extends Loggable {
 
   def render = {
     Script(
-      JsCrVar("serverFuncs",
+      JsCrVar("liftDataService",
         S.session.get.buildRoundtrip(
           List[RoundTripInfo]
             (
