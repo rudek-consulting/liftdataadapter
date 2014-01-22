@@ -1,0 +1,12 @@
+.idea
+.idea_modules
+target
+lib_managed
+*.db
+*.log
+project/boot/other
+project/boot/scala-*
+project/build/target
+project/boot/update.log
+project/boot/*.lock
+project/target

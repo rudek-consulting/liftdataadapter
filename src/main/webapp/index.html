@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lift Data Adapter Example</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+</head>
+<body>
+<script type="text/x-handlebars">
+    <h1>EmbeJS mit Lift Roundtrips</h1>
+
+    {{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="exampleView">
+    Diese Werte kommen über Lift Roundtrip:
+    <ul>
+        {{#each model}}
+        <li>{{title}}</li>
+        {{/each}}
+    </ul>
+</script>
+
+
+<script id="jquery" src="/classpath/jquery.js" type="text/javascript"></script>
+
+<script>
+    window.ENV = {};
+    ENV.EXTEND_PROTOTYPES = false;
+</script>
+
+<script data-lift="NgLiftDataAdapterService"></script>
+
+<script src="lib/handlebars-1.1.2.js"></script>
+<script src="lib/ember.js"></script>
+<script src="lib/ember-data.js"></script>
+<script src="lib/LiftDataAdapter.js"></script>
+
+<script src="scripts/liftdataadaptertest.js"></script>
+
+<!-- to activate the test runner, add the "?test" query string parameter -->
+<!-- <script src="tests/runner.js"></script> -->
+</body>
+</html>
