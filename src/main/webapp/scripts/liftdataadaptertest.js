@@ -1,6 +1,6 @@
 App = Ember.Application.create();
 
-App.ApplicationAdapter = LiftDataAdapter;
+App.ApplicationAdapter = MyAdapter;
 
 App.Router.map(function() {
     this.resource('exampleView', { path: '/'});
